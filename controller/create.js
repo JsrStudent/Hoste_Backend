@@ -2,6 +2,7 @@ const details=require("../model/detail");
 const jwt = require("jsonwebtoken")
 const bcrypt = require('bcrypt');
 const detail = require("../model/detail");
+const sendMail = require("./SendMail");
 require("dotenv").config()
 
 
@@ -147,6 +148,12 @@ exports.login=async(req,res)=>{
             expiresIn:"2h",
         })
         const {_id,name,regno,email,role,roomno}=user;
+
+    //    const subject = "Login Successful - Hostel Management System";
+    // const text = `Hi ${name}, you have successfully logged in to your hostel account.`;
+    // const html = `<p>Hi <b>${name}</b>,</p><p>You have successfully logged in to the <b>Hostel Management System</b>.</p><p>If this wasn't you, please contact the admin immediately.</p><br><p>Regards,<br>Hostel Admin</p>`;
+
+    // await sendMail(user.email, subject, text, html);
         return res.status(200).json({
             success:true,
             token,

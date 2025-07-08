@@ -1,6 +1,6 @@
 // const Electricity=require("../model/complain");
 
-
+// https://hoste-frontend-dusky.vercel.app//
 const StudentComplaint = require("../model/complain"); // update to correct path
 
 exports.register_complain= async (req, res) => {
