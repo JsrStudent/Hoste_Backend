@@ -9,7 +9,17 @@ const{delete_complain}=require("../controller/delete")
 const {addAnnouncement,getAllAnnouncements}=require("../controller/add_annoucement")
 const {getStudentComplaints,getAllComplaintsForAdmin }=require("../controller/getdetails");
 
+
+const { signupRequest, verifyAndRegister} = require("../controller/create");
+
+
 // get route  electrict
+
+// New OTP-first registration routes
+router.post("/signup-request", signupRequest);
+router.post("/verify-register", verifyAndRegister);
+
+
 
 
 router.get("/get/mycomplain",middleware,getStudentComplaints);
